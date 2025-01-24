@@ -4,8 +4,8 @@ This project is designed to analyze quiz performance data, generate actionable i
 
 ### Table of Contents
 
-#L Project Overview
-#L Setup Instructions
+[Project Overview](#Project-Overview)
+Setup Instructions
 #L Approach Description
 #L Visualizations and Insights
 
