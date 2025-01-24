@@ -104,12 +104,16 @@ After running the application, you will see results like the following:
 - Focus on the following weak topics: Algebra, Geometry.
 - Your overall accuracy is 65.00%. Keep improving!
 - Pay extra attention to questions with difficulty 'Hard', as your accuracy is only 55.00%.
+  
 --- Recommendations ---
 
 - Practice more questions on: Algebra, Geometry.
 - Aim to improve your overall accuracy, which is currently 65.00%. Start by revisiting incorrect answers.
 - Work on questions at the 'Hard' difficulty level to improve your performance.
---- Persona --- Persona: The Beginner Weak Topics: Algebra, Geometry
+  
+--- Persona --- 
+
+- Persona: The Beginner Weak Topics: Algebra, Geometry
 
 --- Creative Insights ---
 
