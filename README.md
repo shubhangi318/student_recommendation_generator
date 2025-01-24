@@ -1,97 +1,118 @@
-## Quiz Insights and Recommendations
+# Student Quiz Performance Insights
 
-This project is designed to analyze quiz performance data, generate actionable insights and recommendations, and define a learner's persona based on their performance. It leverages Python for data processing, visualization, and insights generation.
+## Overview
+This project analyzes quiz performance data to generate insights, recommendations, and a student persona. It ingests quiz performance data from two sources:
 
-### Table of Contents
+- **current_quiz.json**: Contains the details of the quiz, including topics and question difficulty.
+- **quiz_submission.json**: Contains student responses to the quiz.
 
-- [Project Overview](#Project-Overview)
-- [Setup Instructions](#Setup-Instructions)
-- [Approach Description](#Approach-Description)
-- [Visualizations and Insights](#Visualizations-and-Insights)
+Based on this data, the application analyzes the student's performance, provides personalized insights, generates recommendations, and visualizes the performance data. 
 
+## Setup Instructions
 
-### Project Overview
+### Prerequisites
 
-The Quiz Insights and Recommendations application analyzes a student's quiz submissions, compares them with historical data, and provides:
+Ensure you have Python 3.7+ installed. You'll also need to install the required dependencies listed in the `requirements.txt` file.
 
-1. Insights into strengths and weaknesses.
-2. Recommendations for improvement.
-3. A persona definition based on current performance.
-4. Visualizations for easy understanding of the results.
-
-The app supports structured data inputs, processes performance by topics and difficulty levels, and outputs valuable recommendations to help students improve.
-
-### Setup Instructions
-
-Follow these steps to set up and run the project:
-
-#### Prerequisites
-
-Ensure you have Python 3.8 or higher installed along with the following libraries:
-
-- matplotlib
-- seaborn
-- requests
-
-#### Installation
+### Steps
 
 1. Clone the repository:
 
-```
-git clone https://github.com/your-username/quiz-insights.git
-cd quiz-insights
-```
+    ```bash
+    git clone <repository_url>
+    cd <repository_folder>
+    ```
 
-2. Install required dependencies:
+2. Install the required dependencies:
 
-```
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-3. Place the input files (current_quiz.json and quiz_submission.json) in the project directory.
+3. Ensure you have the required input files:
+   - `current_quiz.json`
+   - `quiz_submission.json`
 
-#### Running the Application
+4. Run the application:
 
-Run the following command to start the app:
+    ```bash
+    python app.py
+    ```
 
-```
-python app.py
-```
+The app will process the data and display insights, recommendations, and the student persona, along with visualizations.
 
-### Approach Description
+## Project Approach
 
-The project workflow is divided into the following key steps:
+### Data Ingestion
+The project loads two data sources:
+- `current_quiz.json`: Contains details about the quiz, including topics, questions, and difficulty levels.
+- `quiz_submission.json`: Contains the student's responses to the quiz.
 
-1. Data Ingestion
-- Load the current quiz and submission data from JSON files.
-- Fetch historical quiz data from an external API.
-2. Performance Analysis
-- Analyze topic-wise accuracy using historical and current quiz data.
-- Measure overall accuracy and difficulty-level performance.
-3. Generate Insights and Recommendations
-- Identify weak topics and difficulty levels to suggest areas of focus.
-- Provide recommendations for improvement based on accuracy.
-4. Define Student Persona
-- Classify the learner as a "Beginner," "Specialist," or "Consistent Performer."
-- Highlight strong and weak topics for personalized feedback.
-5. Visualization
-- Create a bar chart showing topic-wise accuracy.
-- Generate a pie chart to visualize the percentage of correct and incorrect answers.
+Additionally, historical data is fetched from an API (`https://api.jsonserve.com/XgAgFJ`) to analyze past performance.
 
+### Data Analysis
+The data is analyzed in several ways:
+1. **Topic Performance**: Measures the student's accuracy for each topic based on historical data.
+2. **Current Accuracy**: Compares the student's responses to the correct answers and calculates their overall accuracy.
+3. **Difficulty Performance**: Analyzes performance by question difficulty and provides insights on areas that need improvement.
 
-### Visualizations and Insights
+### Insights and Recommendations
+Based on the performance data, the application generates:
+- **Insights**: Identifies weak topics, areas of difficulty, and provides suggestions for improvement.
+- **Recommendations**: Suggests practice topics, improvement strategies for weak areas, and focuses on specific difficulty levels.
 
-#### Key Visualizations
+### Persona Definition
+The student's performance is used to categorize them into one of three personas:
+- **The Consistent Performer**: High and consistent performance across topics.
+- **The Specialist**: Strong performance in specific areas but weaker overall.
+- **The Beginner**: Low overall performance, but potential for growth with practice.
 
-1. Topic-Wise Performance
-2. Current Quiz Accuracy
+### Visualizations
+The application generates the following visualizations:
+1. **Topic-wise Performance**: A bar chart visualizing the student's performance across different topics.
+2. **Quiz Accuracy**: A pie chart showing the percentage of correct and incorrect answers.
 
-#### Example Insights
+### Creative Insights
+The application also provides personalized feedback based on the student's persona, offering creative insights like:
+- **The Consistent Performer**: Encouragement to continue performing well.
+- **The Specialist**: Suggestions to broaden focus and work on weaker areas.
+- **The Beginner**: Advice to practice consistently to improve.
 
-1. "Focus on the following weak topics: Algebra, Trigonometry."
-2. "Your overall accuracy is 68.5%. Keep improving!"
+## Key Visualizations
 
-#### Example Recommendations
+1. **Topic-wise Performance**
+   - A bar chart shows the accuracy percentage for each quiz topic.
+   
+   ![Topic-wise Performance](topic_performance_chart.png)
 
-1. "Practice more questions on Geometry and Probability."
-2. "Work on questions at the 'Hard' difficulty level to improve your performance."
+2. **Quiz Accuracy**
+   - A pie chart visualizes the overall accuracy, highlighting the percentage of correct and incorrect answers.
+   
+   ![Quiz Accuracy](accuracy_pie_chart.png)
+
+## Insights Summary
+The analysis generates several key insights:
+- **Weak Topics**: Identifies topics where the student needs to improve.
+- **Accuracy**: Provides the overall accuracy of the student, encouraging improvement.
+- **Difficulty Levels**: Suggests which difficulty levels the student should focus on based on performance.
+
+### Example Output
+After running the application, you will see results like the following:
+
+--- Insights ---
+
+- Focus on the following weak topics: Algebra, Geometry.
+- Your overall accuracy is 65.00%. Keep improving!
+- Pay extra attention to questions with difficulty 'Hard', as your accuracy is only 55.00%.
+--- Recommendations ---
+
+- Practice more questions on: Algebra, Geometry.
+- Aim to improve your overall accuracy, which is currently 65.00%. Start by revisiting incorrect answers.
+- Work on questions at the 'Hard' difficulty level to improve your performance.
+--- Persona --- Persona: The Beginner Weak Topics: Algebra, Geometry
+
+--- Creative Insights ---
+
+- You are just starting out. Consistent practice will help you improve.
+- Work on improving these weak topics: Algebra, Geometry.
+
