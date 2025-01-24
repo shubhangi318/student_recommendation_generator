@@ -83,12 +83,12 @@ The application also provides personalized feedback based on the student's perso
 1. **Topic-wise Performance**
    - A bar chart shows the accuracy percentage for each quiz topic.
    
-   ![Topic-wise Performance](topic_performance_chart.png)
+   ![Topic-wise Performance](https://i.postimg.cc/13MNs7Bk/Screenshot-2025-01-24-at-7-35-12-PM.png)
 
 2. **Quiz Accuracy**
    - A pie chart visualizes the overall accuracy, highlighting the percentage of correct and incorrect answers.
    
-   ![Quiz Accuracy](accuracy_pie_chart.png)
+   ![Quiz Accuracy](https://i.postimg.cc/L6pTs7k5/Screenshot-2025-01-24-at-7-37-27-PM.png)
 
 ## Insights Summary
 The analysis generates several key insights:
